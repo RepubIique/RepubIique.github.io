@@ -23,7 +23,7 @@ const Navbar = () => {
                     }}
                 >
                     <img
-                        src="../../favicon.ico"
+                        src="../../public/favicon.ico"
                         alt="logo"
                         className="w-9 h-9 object-contain"
                     />
