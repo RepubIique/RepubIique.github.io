@@ -46,6 +46,7 @@ const Hero = () => {
                     >
                         based in Perth, Australia
                     </h2>
+                    <h2>WEBSITE UNDER CONSTRUCTION</h2>
                 </div>
             </div>
             <ComputersCanvas />
