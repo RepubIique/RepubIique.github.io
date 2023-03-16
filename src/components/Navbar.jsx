@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { styles } from '../styles'
 import { navLinks } from '../constants/index'
-import { menu, close } from '../assets'
+import { favicon, menu, close } from '../assets'
 
 const Navbar = () => {
     const [active, setActive] = useState('')
@@ -23,7 +23,7 @@ const Navbar = () => {
                     }}
                 >
                     <img
-                        src="../../public/favicon.ico"
+                        src={favicon}
                         alt="logo"
                         className="w-9 h-9 object-contain"
                     />
