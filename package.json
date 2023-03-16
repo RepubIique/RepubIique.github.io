@@ -5,7 +5,7 @@
     "type": "module",
     "homepage": "https://repubiique.github.io/three-portfolio",
     "scripts": {
-        "predeploy": "npm run build",
+        "predeploy": "npm run dist",
         "deploy": "gh-pages -b master -d dist",
         "dev": "vite",
         "build": "tsc && vite build",
