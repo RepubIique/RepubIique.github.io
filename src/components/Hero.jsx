@@ -1,7 +1,7 @@
 import React from 'react'
 import { styles } from '../styles'
 import { motion } from 'framer-motion'
-import { ComputersCanvas } from './canvas'
+import { DuckCanvas } from './canvas'
 import TextTransition, { presets } from 'react-text-transition'
 
 const TEXTS = [
@@ -49,7 +49,7 @@ const Hero = () => {
                     <h2>WEBSITE UNDER CONSTRUCTION</h2>
                 </div>
             </div>
-            <ComputersCanvas />
+            <DuckCanvas />
         </section>
     )
 }
