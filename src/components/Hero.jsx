@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { styles } from '../styles'
 import { motion } from 'framer-motion'
 import { DuckCanvas } from './canvas'
@@ -13,14 +13,25 @@ const TEXTS = [
 ]
 
 const Hero = () => {
-    const [index, setIndex] = React.useState(0)
+    const [index, setIndex] = useState(0)
+    const [isMobile, setIsMobile] = useState(false)
 
-    React.useEffect(() => {
+    useEffect(() => {
         const intervalId = setInterval(
             () => setIndex((index) => index + 1),
             2000
         )
-        return () => clearTimeout(intervalId)
+        const mediaQuery = window.matchMedia('(max-width:500px)')
+        setIsMobile(mediaQuery.matches)
+        const handleMediaQueryChange = (event) => {
+            setIsMobile(event.matches)
+        }
+        mediaQuery.addEventListener('change', handleMediaQueryChange)
+
+        return () => {
+            clearTimeout(intervalId)
+            mediaQuery.removeEventListener('change', handleMediaQueryChange)
+        }
     }, [])
     return (
         <section className="relative w-full h-screen mx-auto">
@@ -43,7 +54,9 @@ const Hero = () => {
                         </TextTransition>
                     </h1>
                     <h2
-                        className={`font-black text-white lg:text-[40px] sm:text-[30px] xs:text-[25px] text-[25px] lg:leading-[98px] my-4`}
+                        className={`font-black text-white lg:text-[40px] sm:text-[30px] xs:text-[25px] text-[25px] lg:leading-[98px] ${
+                            isMobile ? 'mt-14' : 'mt-2'
+                        }`}
                     >
                         based in Perth, Australia
                     </h2>

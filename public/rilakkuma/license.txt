@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rilakkuma
+* source:	https://sketchfab.com/3d-models/rilakkuma-8b73649972f446e1a59041861ffa2b0a
+* author:	Ruowen (https://sketchfab.com/cfxrw)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rilakkuma" (https://sketchfab.com/3d-models/rilakkuma-8b73649972f446e1a59041861ffa2b0a) by Ruowen (https://sketchfab.com/cfxrw) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
