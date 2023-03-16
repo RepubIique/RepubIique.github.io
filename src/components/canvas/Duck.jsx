@@ -14,8 +14,8 @@ const Duck = () => {
             <primitive
                 object={duck.scene}
                 scale={0.8}
-                position={[-500, -200.25, 400]}
-                rotation={[-0.01, -0.2, -0.1]}
+                position={[-10, -200.25, 0]}
+                rotation={[-0.0, -0.0, -0.0]}
             />
         </mesh>
     )
@@ -26,7 +26,7 @@ const DuckCanvas = () => {
         <Canvas
             frameloop="demand"
             shadows
-            camera={{ position: [-1000, 600, 800], fov: 40 }}
+            camera={{ position: [-400, 400, 600], fov: 40 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             <Suspense fallback={<CanvasLoader />}>
