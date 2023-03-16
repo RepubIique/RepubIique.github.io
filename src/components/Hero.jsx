@@ -55,7 +55,7 @@ const Hero = () => {
                     </h1>
                     <h2
                         className={`font-black text-white lg:text-[40px] sm:text-[30px] xs:text-[25px] text-[25px] lg:leading-[98px] ${
-                            isMobile ? 'mt-14' : 'mt-2'
+                            isMobile ? 'mt-14' : ''
                         }`}
                     >
                         based in Perth, Australia
