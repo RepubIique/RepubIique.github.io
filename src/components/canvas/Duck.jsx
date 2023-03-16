@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'
 
-const Duck = () => {
+const Duck = ({ isMobile }) => {
     const duck = useGLTF('./rubber_duck/scene.gltf')
 
     return (
@@ -20,7 +20,7 @@ const Duck = () => {
             />
             <primitive
                 object={duck.scene}
-                scale={0.8}
+                scale={isMobile ? 0.5 : 0.8}
                 position={[-10, -200.25, 0]}
                 rotation={[-0.12, -0.0, -0.0]}
             />
@@ -29,6 +29,18 @@ const Duck = () => {
 }
 
 const DuckCanvas = () => {
+    const [isMobile, setIsMobile] = useState(false)
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width:500px)')
+        setIsMobile(mediaQuery.matches)
+        const handleMediaQueryChange = (event) => {
+            setIsMobile(event.matches)
+        }
+        mediaQuery.addEventListener('change', handleMediaQueryChange)
+        return () => {
+            mediaQuery.removeEventListener('change', handleMediaQueryChange)
+        }
+    }, [])
     return (
         <Canvas
             frameloop="demand"
@@ -42,7 +54,7 @@ const DuckCanvas = () => {
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
-                <Duck />
+                <Duck isMobile={isMobile} />
             </Suspense>
             <Preload all />
         </Canvas>
