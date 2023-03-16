@@ -9,9 +9,14 @@ const Duck = () => {
 
     return (
         <mesh>
-            <hemisphereLight intensity={0.15} groundColor="black" />
+            <hemisphereLight intensity={0.25} groundColor="black" />
             <pointLight intensity={1} />
-            <primitive object={duck.scene} />
+            <primitive
+                object={duck.scene}
+                scale={0.8}
+                position={[-500, -200.25, 400]}
+                rotation={[-0.01, -0.2, -0.1]}
+            />
         </mesh>
     )
 }
@@ -21,7 +26,7 @@ const DuckCanvas = () => {
         <Canvas
             frameloop="demand"
             shadows
-            camera={{ position: [0, 0, 0], fov: 25 }}
+            camera={{ position: [-1000, 600, 800], fov: 40 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             <Suspense fallback={<CanvasLoader />}>
@@ -37,4 +42,4 @@ const DuckCanvas = () => {
     )
 }
 
-export default Duck
+export default DuckCanvas
