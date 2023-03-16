@@ -15,7 +15,7 @@ const Duck = () => {
                 object={duck.scene}
                 scale={0.8}
                 position={[-10, -200.25, 0]}
-                rotation={[-0.22, -0.0, -0.0]}
+                rotation={[-0.12, -0.0, -0.0]}
             />
         </mesh>
     )
