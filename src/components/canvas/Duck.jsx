@@ -11,6 +11,13 @@ const Duck = () => {
         <mesh>
             <hemisphereLight intensity={0.35} groundColor="black" />
             <pointLight intensity={0.9} />
+            <spotLight
+                position={[-1000, 500, 10]}
+                angle={0.2}
+                penumbra={1}
+                intensity={0.8}
+                castShadow
+            />
             <primitive
                 object={duck.scene}
                 scale={0.8}
