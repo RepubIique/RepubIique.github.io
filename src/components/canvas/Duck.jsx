@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 
 import CanvasLoader from '../Loader'
 
-const Duck = ({ isMobile }) => {
+export const Duck = ({ isMobile }) => {
     const duck = useGLTF('./rubber_duck/scene.gltf')
 
     return (
