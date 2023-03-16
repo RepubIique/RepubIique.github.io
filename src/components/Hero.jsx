@@ -7,6 +7,7 @@ import TextTransition, { presets } from 'react-text-transition'
 const TEXTS = [
     'Coffee Addict',
     'Software Engineer',
+    'Duck Enthusiast',
     'Swing Trader',
     '"Comedian"',
 ]

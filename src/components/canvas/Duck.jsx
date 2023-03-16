@@ -9,13 +9,13 @@ const Duck = () => {
 
     return (
         <mesh>
-            <hemisphereLight intensity={0.25} groundColor="black" />
-            <pointLight intensity={1} />
+            <hemisphereLight intensity={0.35} groundColor="black" />
+            <pointLight intensity={0.9} />
             <primitive
                 object={duck.scene}
                 scale={0.8}
                 position={[-10, -200.25, 0]}
-                rotation={[-0.0, -0.0, -0.0]}
+                rotation={[-0.22, -0.0, -0.0]}
             />
         </mesh>
     )
