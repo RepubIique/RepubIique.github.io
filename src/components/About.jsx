@@ -6,7 +6,9 @@ import { styles } from '../styles'
 import { services } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { fadeIn, textVariant } from '../utils/motion'
-import ReactCanvas from './canvas/React'
+import { React3d } from './canvas/React'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 
 const ServiceCard = ({ index, title, icon }) => (
     <Tilt className="xs:w-[250px] w-full">
@@ -22,8 +24,24 @@ const ServiceCard = ({ index, title, icon }) => (
                 }}
                 className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
             >
-                <ReactCanvas />
-
+                {services.map((service, i) => (
+                    <Canvas key={i} className="w-full">
+                        <OrbitControls
+                            autoRotate
+                            enableZoom={false}
+                            maxPolarAngle={Math.PI / 2}
+                            minPolarAngle={Math.PI / 2}
+                        />
+                        <spotLight
+                            position={[1, 2, 2]}
+                            angle={0.2}
+                            penumbra={3}
+                            intensity={0.8}
+                        />
+                        {service.title == 'React Developer' && <React3d />}
+                        {/* Add more conditions for other icons here */}
+                    </Canvas>
+                ))}
                 <h3 className="text-white text-[20px] font-bold text-center">
                     {title}
                 </h3>

@@ -1,8 +1,4 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
     javascript,
     typescript,
     html,
@@ -24,8 +20,6 @@ import {
     tripguide,
     threejs,
 } from '../assets'
-import DuckCanvas from '../components/canvas/Duck'
-import ReactCanvas from '../components/canvas/React'
 
 export const navLinks = [
     {
@@ -45,20 +39,19 @@ export const navLinks = [
 const services = [
     {
         title: 'React Developer',
-        icon: ReactCanvas,
     },
-    {
-        title: 'React Developer',
-        icon: ReactCanvas,
-    },
-    {
-        title: 'React Developer',
-        icon: ReactCanvas,
-    },
-    {
-        title: 'React Developer',
-        icon: ReactCanvas,
-    },
+    // {
+    //     title: 'React Developer',
+    //     icon: ReactCanvas,
+    // },
+    // {
+    //     title: 'React Developer',
+    //     icon: ReactCanvas,
+    // },
+    // {
+    //     title: 'React Developer',
+    //     icon: ReactCanvas,
+    // },
 ]
 
 const technologies = [

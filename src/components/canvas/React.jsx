@@ -1,10 +1,6 @@
-import { Suspense, useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 
-import CanvasLoader from '../Loader'
-
-export const React = ({ isMobile }) => {
+export const React3d = ({ isMobile }) => {
     const react = useGLTF('./react_logo/scene.gltf')
 
     return (
@@ -22,25 +18,4 @@ export const React = ({ isMobile }) => {
     )
 }
 
-const ReactCanvas = () => {
-    return (
-        <Canvas
-            frameloop="demand"
-            shadows
-            camera={{ position: [0, 0, 10], fov: 30 }}
-            gl={{ preserveDrawingBuffer: true }}
-        >
-            <OrbitControls
-                autoRotate
-                enableZoom={false}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 2}
-            />
-            <React />
-
-            <Preload all />
-        </Canvas>
-    )
-}
-
-export default ReactCanvas
+export default React3d
