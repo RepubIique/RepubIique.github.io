@@ -136,7 +136,7 @@ const experiences = [
         ],
     },
     {
-        title: 'JR Full Stack Developer',
+        title: 'JR Full Stack Developer (Contract)',
         company_name: 'Common Extract',
         icon: common,
         iconBg: '#FFFFFF',
