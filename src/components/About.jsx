@@ -7,10 +7,11 @@ import { services } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { fadeIn, textVariant } from '../utils/motion'
 import { React3d } from './canvas/React'
+import { Globe3d } from './canvas/Globe'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
-const ServiceCard = ({ index, title, icon }) => (
+const DeveloperCard = ({ index, title, children }) => (
     <Tilt className="xs:w-[250px] w-full">
         <motion.div
             variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -24,30 +25,39 @@ const ServiceCard = ({ index, title, icon }) => (
                 }}
                 className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
             >
-                {services.map((service, i) => (
-                    <Canvas key={i} className="w-full">
-                        <OrbitControls
-                            autoRotate
-                            enableZoom={false}
-                            maxPolarAngle={Math.PI / 2}
-                            minPolarAngle={Math.PI / 2}
-                        />
-                        <spotLight
-                            position={[1, 2, 2]}
-                            angle={0.2}
-                            penumbra={3}
-                            intensity={0.8}
-                        />
-                        {service.title == 'React Developer' && <React3d />}
-                        {/* Add more conditions for other icons here */}
-                    </Canvas>
-                ))}
+                <Canvas className="w-full">
+                    <OrbitControls
+                        autoRotate
+                        enableZoom={false}
+                        maxPolarAngle={Math.PI / 2}
+                        minPolarAngle={Math.PI / 2}
+                    />
+                    <spotLight
+                        position={[1, 2, 2]}
+                        angle={0.2}
+                        penumbra={3}
+                        intensity={0.8}
+                    />
+                    {children}
+                </Canvas>
                 <h3 className="text-white text-[20px] font-bold text-center">
                     {title}
                 </h3>
             </div>
         </motion.div>
     </Tilt>
+)
+
+const ReactDeveloperCard = ({ index }) => (
+    <DeveloperCard index={index} title="React Developer">
+        <React3d />
+    </DeveloperCard>
+)
+
+const FullStackDeveloperCard = ({ index }) => (
+    <DeveloperCard index={index} title="Full Stack Developer">
+        <Globe3d />
+    </DeveloperCard>
 )
 
 const About = () => {
@@ -77,13 +87,14 @@ const About = () => {
             </motion.p>
 
             <div className="mt-20 flex flex-wrap gap-10">
-                {services.map((service, index) => (
-                    <ServiceCard
-                        key={service.title}
-                        index={index}
-                        {...service}
-                    />
-                ))}
+                {services.map((service) => {
+                    switch (service.title) {
+                        case 'React Developer':
+                            return <ReactDeveloperCard />
+                        case 'Full Stack Developer':
+                            return <FullStackDeveloperCard />
+                    }
+                })}
             </div>
         </>
     )

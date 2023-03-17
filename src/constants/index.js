@@ -40,10 +40,9 @@ const services = [
     {
         title: 'React Developer',
     },
-    // {
-    //     title: 'React Developer',
-    //     icon: ReactCanvas,
-    // },
+    {
+        title: 'Full Stack Developer',
+    },
     // {
     //     title: 'React Developer',
     //     icon: ReactCanvas,

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Globe with Meridians (3D Icon)
+* source:	https://sketchfab.com/3d-models/globe-with-meridians-3d-icon-2c6d6cc23306439e888be011c25fa232
+* author:	Alexander (https://sketchfab.com/pravdin)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Globe with Meridians (3D Icon)" (https://sketchfab.com/3d-models/globe-with-meridians-3d-icon-2c6d6cc23306439e888be011c25fa232) by Alexander (https://sketchfab.com/pravdin) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
