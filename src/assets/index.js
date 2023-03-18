@@ -22,10 +22,6 @@ import education from './company/education.jpeg'
 import milne from './company/milne.jpeg'
 import mypass from './company/mypass.png'
 
-import carrent from './carrent.png'
-import jobit from './jobit.png'
-import tripguide from './tripguide.png'
-
 export {
     favicon,
     github,
@@ -44,9 +40,6 @@ export {
     tailwind,
     typescript,
     threejs,
-    carrent,
-    jobit,
-    tripguide,
     common,
     education,
     milne,
