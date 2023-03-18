@@ -15,9 +15,6 @@ import {
     education,
     milne,
     mypass,
-    carrent,
-    jobit,
-    tripguide,
     threejs,
 } from '../assets'
 
@@ -206,7 +203,7 @@ const projects = [
                 color: 'pink-text-gradient',
             },
         ],
-        image: carrent,
+        image: reactjs,
         source_code_link: 'https://github.com/',
     },
     {
@@ -227,7 +224,7 @@ const projects = [
                 color: 'pink-text-gradient',
             },
         ],
-        image: jobit,
+        image: reactjs,
         source_code_link: 'https://github.com/',
     },
     {
@@ -248,7 +245,7 @@ const projects = [
                 color: 'pink-text-gradient',
             },
         ],
-        image: tripguide,
+        image: reactjs,
         source_code_link: 'https://github.com/',
     },
 ]
