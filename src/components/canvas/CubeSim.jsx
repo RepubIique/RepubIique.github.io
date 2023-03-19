@@ -26,10 +26,10 @@ const PhysicsSimulation = () => {
             mass: 0.2,
             position,
             rotation: [0.4, 0.2, 0.5],
-            args: [2, 2, 2],
+            args: [1.5, 1.5, 1.5],
         }))
         return (
-            <mesh receiveShadow castShadow scale={2} ref={ref}>
+            <mesh receiveShadow castShadow scale={1.5} ref={ref}>
                 <boxGeometry />
                 <meshStandardMaterial
                     roughness={0.5}
@@ -55,12 +55,11 @@ const PhysicsSimulation = () => {
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
-                {/* //#060815 */}
                 <color attach="background" args={['#060815']} />
-                <ambientLight intensity={0.8} />
+                <ambientLight intensity={3} />
                 <pointLight position={[10, 10, 10]} />
                 <directionalLight
-                    position={[10, 10, 10]}
+                    position={[-10, 10, 10]}
                     shadow-mapSize={[250, 250]}
                 />
                 <Physics>
