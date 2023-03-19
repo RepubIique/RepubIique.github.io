@@ -46,14 +46,13 @@ const PhysicsSimulation = () => {
             frameloop="demand"
             dpr={[1, 2]}
             gl={{ alpha: false }}
-            camera={{ position: [0, 30, -5], fov: 30 }}
+            camera={{ position: [0, 20, -5], fov: 30 }}
         >
             <Suspense fallback={<div>Loading...</div>}>
                 <OrbitControls
                     autoRotate={true}
                     enableZoom={false}
                     maxPolarAngle={Math.PI / 2}
-                    minPolarAngle={Math.PI / 2}
                 />
                 <color attach="background" args={['#060815']} />
                 <ambientLight intensity={3} />
@@ -87,13 +86,16 @@ const PhysicsSimulation = () => {
                         ...technologies,
                         ...technologies,
                         ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
                     ].map((tech, index) => (
                         <Cube
                             key={index}
                             icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
-                                Math.random() * 3000 + 2,
+                                Math.random() * 700 + 2,
                                 Math.random() * 4 - 2,
                             ]}
                         />
