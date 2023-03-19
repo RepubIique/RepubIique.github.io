@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Physics, useBox, usePlane, useSphere } from '@react-three/cannon'
-import { OrbitControls, Preload } from '@react-three/drei'
-
-import CanvasLoader from '../Loader'
+import { Physics, useBox, usePlane } from '@react-three/cannon'
+import { OrbitControls } from '@react-three/drei'
+import { TextureLoader } from 'three'
+import { technologies } from '../../constants/index/'
 
 const PhysicsSimulation = () => {
     function Plane(props) {
@@ -13,23 +13,28 @@ const PhysicsSimulation = () => {
         }))
         return (
             <mesh ref={ref} receiveShadow>
-                <planeGeometry args={[300, 300]} />
+                <planeGeometry args={[10, 10]} />
                 <shadowMaterial color="#171717" transparent opacity={0.4} />
             </mesh>
         )
     }
 
-    function Cube(props) {
+    function Cube({ icon, position }) {
+        // const texture = new TextureLoader().load(icon)
+        const texture = new TextureLoader().load(icon) // use a public texture
         const [ref] = useBox(() => ({
-            mass: 1,
-            position: [0, 5, 0],
+            mass: 0.2,
+            position,
             rotation: [0.4, 0.2, 0.5],
-            ...props,
         }))
         return (
             <mesh receiveShadow castShadow ref={ref}>
                 <boxGeometry />
-                <meshLambertMaterial color="hotpink" />
+                <meshStandardMaterial
+                    roughness={0.5}
+                    metalness={0.5}
+                    map={texture}
+                />
             </mesh>
         )
     }
@@ -40,29 +45,37 @@ const PhysicsSimulation = () => {
             shadows
             dpr={[1, 2]}
             gl={{ alpha: false }}
-            camera={{ position: [0, -5, 10], fov: 25 }}
+            camera={{ position: [0, -10, 10], fov: 25 }}
         >
-            <Suspense fallback={<CanvasLoader />}>
+            <Suspense fallback={<div>Loading...</div>}>
                 <OrbitControls
                     enableZoom={false}
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
                 <color attach="background" args={['lightblue']} />
-                <ambientLight />
+                <ambientLight intensity={0.5} />
+                <pointLight position={[10, 10, 10]} />
                 <directionalLight
                     position={[10, 10, 10]}
                     castShadow
                     shadow-mapSize={[1024, 1024]}
                 />
                 <Physics>
-                    <Plane position={[0, -1.5, 3]} />
-                    <Cube position={[0.1, 5, 0]} />
-                    <Cube position={[0, 10, -1]} />
-                    <Cube position={[0, 20, -2]} />
+                    <Plane position={[0, -2, 0]} />
+                    {technologies.map((icon, index) => (
+                        <Cube
+                            key={index}
+                            icon={icon}
+                            position={[
+                                Math.random() * 4 - 2,
+                                Math.random() * 4 + 2,
+                                Math.random() * 4 - 2,
+                            ]}
+                        />
+                    ))}
                 </Physics>
             </Suspense>
-            <Preload all />
         </Canvas>
     )
 }
