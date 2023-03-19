@@ -15,7 +15,7 @@ const PhysicsSimulation = () => {
         }))
         return (
             <mesh ref={ref} receiveShadow>
-                <planeGeometry args={[size.width, size.height]} />
+                <planeGeometry args={[1, 1, 1]} />
                 <shadowMaterial color="#171717" transparent opacity={0.4} />
             </mesh>
         )
@@ -25,7 +25,7 @@ const PhysicsSimulation = () => {
         const texture = new TextureLoader().load(icon)
 
         const [ref] = useBox(() => ({
-            mass: 0.2,
+            mass: 8,
             position,
             rotation: [0.4, 0.2, 0.5],
         }))
@@ -45,7 +45,6 @@ const PhysicsSimulation = () => {
         <Canvas
             style={{ height: '300px' }}
             frameloop="always"
-            shadows
             dpr={[1, 2]}
             gl={{ alpha: false }}
             camera={{ position: [0, -10, 10], fov: 45 }}
@@ -72,7 +71,7 @@ const PhysicsSimulation = () => {
                             icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
-                                Math.random() * 4 + 2,
+                                Math.random() * 800 + 2,
                                 Math.random() * 4 - 2,
                             ]}
                         />
