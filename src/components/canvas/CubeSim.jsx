@@ -28,7 +28,7 @@ const PhysicsSimulation = () => {
             rotation: [0.4, 0.2, 0.5],
         }))
         return (
-            <mesh receiveShadow castShadow ref={ref}>
+            <mesh receiveShadow castShadow scale={1.5} ref={ref}>
                 <boxGeometry />
                 <meshStandardMaterial
                     roughness={0.5}
@@ -45,7 +45,7 @@ const PhysicsSimulation = () => {
             shadows
             dpr={[1, 2]}
             gl={{ alpha: false }}
-            camera={{ position: [0, -10, 10], fov: 25 }}
+            camera={{ position: [0, -10, 10], fov: 15 }}
         >
             <Suspense fallback={<div>Loading...</div>}>
                 <OrbitControls
@@ -62,7 +62,7 @@ const PhysicsSimulation = () => {
                     shadow-mapSize={[1024, 1024]}
                 />
                 <Physics>
-                    <Plane position={[0, -1.5, 9]} />
+                    <Plane position={[0, -1.3, 0]} />
                     {technologies.map((tech, index) => (
                         <Cube
                             key={index}

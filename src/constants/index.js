@@ -12,7 +12,7 @@ import reactjs from '../assets/tech/reactjs.png'
 import redux from '../assets/tech/redux.png'
 import tailwind from '../assets/tech/tailwind.png'
 import typescript from '../assets/tech/typescript.png'
-import threejs from '../assets/tech/threejs.svg'
+import threejs from '../assets/tech/threejs.png'
 
 export const navLinks = [
     {
