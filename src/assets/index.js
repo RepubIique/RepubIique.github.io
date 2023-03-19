@@ -16,6 +16,8 @@ import redux from './tech/redux.png'
 import tailwind from './tech/tailwind.png'
 import typescript from './tech/typescript.png'
 import threejs from './tech/threejs.png'
+import dollar from './tech/dollar.png'
+import cat from './tech/cat.png'
 
 import common from './company/common.png'
 import education from './company/education.jpeg'
@@ -40,6 +42,8 @@ export {
     tailwind,
     typescript,
     threejs,
+    dollar,
+    cat,
     common,
     education,
     milne,

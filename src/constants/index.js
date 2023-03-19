@@ -13,6 +13,8 @@ import redux from '../assets/tech/redux.png'
 import tailwind from '../assets/tech/tailwind.png'
 import typescript from '../assets/tech/typescript.png'
 import threejs from '../assets/tech/threejs.png'
+import dollar from '../assets/tech/dollar.png'
+import cat from '../assets/tech/cat.png'
 
 export const navLinks = [
     {
@@ -98,6 +100,14 @@ const technologies = [
     {
         name: 'docker',
         icon: docker,
+    },
+    {
+        name: 'dollar',
+        icon: dollar,
+    },
+    {
+        name: 'cat',
+        icon: cat,
     },
 ]
 

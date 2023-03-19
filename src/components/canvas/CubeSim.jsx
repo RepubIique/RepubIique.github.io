@@ -1,14 +1,12 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Physics, useBox, usePlane } from '@react-three/cannon'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, Preload } from '@react-three/drei'
 import { TextureLoader } from 'three'
 import { technologies } from '../../constants'
-import { useThree } from '@react-three/fiber'
 
 const PhysicsSimulation = () => {
     function Plane(props) {
-        const { size } = useThree()
         const [ref] = usePlane(() => ({
             rotation: [-Math.PI / 2, 0, 0],
             ...props,
@@ -34,7 +32,7 @@ const PhysicsSimulation = () => {
                 <boxGeometry />
                 <meshStandardMaterial
                     roughness={0.5}
-                    metalness={0.5}
+                    metalness={0.8}
                     map={texture}
                 />
             </mesh>
@@ -43,41 +41,66 @@ const PhysicsSimulation = () => {
 
     return (
         <Canvas
-            style={{ height: '300px' }}
-            frameloop="always"
+            style={{ height: '500px' }}
+            frameloop="demand"
             dpr={[1, 2]}
             gl={{ alpha: false }}
-            camera={{ position: [0, -10, 10], fov: 45 }}
+            camera={{ position: [0, 30, -5], fov: 30 }}
         >
             <Suspense fallback={<div>Loading...</div>}>
                 <OrbitControls
+                    autoRotate={true}
                     enableZoom={false}
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
+                {/* //#060815 */}
                 <color attach="background" args={['#060815']} />
-                <ambientLight intensity={0.5} />
+                <ambientLight intensity={0.8} />
                 <pointLight position={[10, 10, 10]} />
                 <directionalLight
                     position={[10, 10, 10]}
-                    castShadow
-                    shadow-mapSize={[1024, 1024]}
+                    shadow-mapSize={[500, 500]}
                 />
                 <Physics>
                     <Plane position={[0, -1.3, 0]} />
-                    {technologies.map((tech, index) => (
+                    {[
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                    ].map((tech, index) => (
                         <Cube
                             key={index}
                             icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
-                                Math.random() * 800 + 2,
+                                Math.random() * 6000 + 2,
                                 Math.random() * 4 - 2,
                             ]}
                         />
                     ))}
                 </Physics>
             </Suspense>
+            <Preload all />
         </Canvas>
     )
 }
