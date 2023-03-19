@@ -4,16 +4,18 @@ import { Physics, useBox, usePlane } from '@react-three/cannon'
 import { OrbitControls } from '@react-three/drei'
 import { TextureLoader } from 'three'
 import { technologies } from '../../constants'
+import { useThree } from '@react-three/fiber'
 
 const PhysicsSimulation = () => {
     function Plane(props) {
+        const { size } = useThree()
         const [ref] = usePlane(() => ({
             rotation: [-Math.PI / 2, 0, 0],
             ...props,
         }))
         return (
             <mesh ref={ref} receiveShadow>
-                <planeGeometry args={[10, 10]} />
+                <planeGeometry args={[size.width, size.height]} />
                 <shadowMaterial color="#171717" transparent opacity={0.4} />
             </mesh>
         )
@@ -41,11 +43,12 @@ const PhysicsSimulation = () => {
 
     return (
         <Canvas
+            style={{ height: '300px' }}
             frameloop="always"
             shadows
             dpr={[1, 2]}
             gl={{ alpha: false }}
-            camera={{ position: [0, -10, 10], fov: 15 }}
+            camera={{ position: [0, -10, 10], fov: 45 }}
         >
             <Suspense fallback={<div>Loading...</div>}>
                 <OrbitControls
