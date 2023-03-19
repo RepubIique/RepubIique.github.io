@@ -13,7 +13,7 @@ const PhysicsSimulation = () => {
         }))
         return (
             <mesh ref={ref} receiveShadow>
-                <planeGeometry args={[20, 20]} />
+                <planeGeometry args={[20, 20, 20]} />
                 <shadowMaterial color="#171717" transparent opacity={0.4} />
             </mesh>
         )
