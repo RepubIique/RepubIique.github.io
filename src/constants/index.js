@@ -15,6 +15,12 @@ import typescript from '../assets/tech/typescript.png'
 import threejs from '../assets/tech/threejs.png'
 import dollar from '../assets/tech/dollar.png'
 import cat from '../assets/tech/cat.png'
+import angular from '../assets/tech/angular.png'
+import neo4j from '../assets/tech/neo4j.png'
+import java from '../assets/tech/java.png'
+import nestjs from '../assets/tech/nestjs.png'
+import aws from '../assets/tech/aws.png'
+import ionic from '../assets/tech/ionic.png'
 
 export const navLinks = [
     {
@@ -52,6 +58,14 @@ const technologies = [
     {
         name: 'HTML 5',
         icon: html,
+    },
+    {
+        name: 'aws',
+        icon: aws,
+    },
+    {
+        name: 'ionic',
+        icon: ionic,
     },
     {
         name: 'CSS 3',
@@ -100,6 +114,22 @@ const technologies = [
     {
         name: 'docker',
         icon: docker,
+    },
+    {
+        name: 'angular',
+        icon: angular,
+    },
+    {
+        name: 'neo4j',
+        icon: neo4j,
+    },
+    {
+        name: 'java',
+        icon: java,
+    },
+    {
+        name: 'nestjs',
+        icon: nestjs,
     },
     {
         name: 'dollar',

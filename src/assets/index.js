@@ -18,6 +18,12 @@ import typescript from './tech/typescript.png'
 import threejs from './tech/threejs.png'
 import dollar from './tech/dollar.png'
 import cat from './tech/cat.png'
+import angular from './tech/angular.png'
+import neo4j from './tech/neo4j.png'
+import java from './tech/java.png'
+import nestjs from './tech/nestjs.png'
+import aws from './tech/aws.png'
+import ionic from './tech/ionic.png'
 
 import common from './company/common.png'
 import education from './company/education.jpeg'
@@ -44,6 +50,12 @@ export {
     threejs,
     dollar,
     cat,
+    angular,
+    neo4j,
+    nestjs,
+    java,
+    aws,
+    ionic,
     common,
     education,
     milne,
