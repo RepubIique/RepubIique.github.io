@@ -87,12 +87,24 @@ const About = () => {
             </motion.p>
 
             <div className="mt-20 flex flex-wrap gap-10">
-                {services.map((service) => {
+                {services.map((service, index) => {
                     switch (service.title) {
                         case 'React Developer':
-                            return <ReactDeveloperCard />
+                            return (
+                                <ReactDeveloperCard
+                                    key={`developer-${index}`}
+                                    index={index}
+                                />
+                            )
                         case 'Full Stack Developer':
-                            return <FullStackDeveloperCard />
+                            return (
+                                <FullStackDeveloperCard
+                                    key={`stack-${index}`}
+                                    index={index}
+                                />
+                            )
+                        default:
+                            return null
                     }
                 })}
             </div>
