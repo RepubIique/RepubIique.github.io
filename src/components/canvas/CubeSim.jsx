@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Physics, useBox, usePlane } from '@react-three/cannon'
 import { OrbitControls } from '@react-three/drei'
 import { TextureLoader } from 'three'
-import { technologies } from '../../constants/index/'
+import { technologies } from '../../constants'
 
 const PhysicsSimulation = () => {
     function Plane(props) {
@@ -19,9 +19,9 @@ const PhysicsSimulation = () => {
         )
     }
 
-    function Cube({ icon, position }) {
-        // const texture = new TextureLoader().load(icon)
-        const texture = new TextureLoader().load(icon) // use a public texture
+    const Cube = ({ icon, position }) => {
+        const texture = new TextureLoader().load(icon)
+
         const [ref] = useBox(() => ({
             mass: 0.2,
             position,
@@ -62,11 +62,11 @@ const PhysicsSimulation = () => {
                     shadow-mapSize={[1024, 1024]}
                 />
                 <Physics>
-                    <Plane position={[0, -2, 0]} />
-                    {technologies.map((icon, index) => (
+                    <Plane position={[0, -1.5, 9]} />
+                    {technologies.map((tech, index) => (
                         <Cube
                             key={index}
-                            icon={icon}
+                            icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
                                 Math.random() * 4 + 2,
