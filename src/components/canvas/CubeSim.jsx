@@ -41,7 +41,7 @@ const PhysicsSimulation = () => {
 
     return (
         <Canvas
-            frameloop="demand"
+            frameloop="always"
             shadows
             dpr={[1, 2]}
             gl={{ alpha: false }}
@@ -53,7 +53,7 @@ const PhysicsSimulation = () => {
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
-                <color attach="background" args={['lightblue']} />
+                <color attach="background" args={['#060815']} />
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} />
                 <directionalLight
