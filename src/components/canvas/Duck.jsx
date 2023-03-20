@@ -20,7 +20,7 @@ export const Duck = ({ isMobile }) => {
             />
             <primitive
                 object={duck.scene}
-                scale={isMobile ? 0.5 : 0.8}
+                scale={isMobile ? 0.4 : 0.8}
                 position={[-10, -200.25, 0]}
                 rotation={[-0.12, -0.0, -0.0]}
             />
