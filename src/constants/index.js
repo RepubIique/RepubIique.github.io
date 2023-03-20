@@ -22,6 +22,10 @@ import nestjs from '../assets/tech/nestjs.png'
 import aws from '../assets/tech/aws.png'
 import ionic from '../assets/tech/ionic.png'
 
+import nanobar from '../assets/nanobar.jpg'
+import travel from '../assets/travel.jpg'
+import solar from '../assets/solar.jpg'
+
 export const navLinks = [
     {
         id: 'about',
@@ -222,33 +226,33 @@ const testimonials = [
 
 const projects = [
     {
-        name: 'Car Rent',
+        name: 'Nanobar',
         description:
-            'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+            'Web appplication for vending machines. Pay through the app and the vending machine will dispense your order',
         tags: [
             {
-                name: 'react',
+                name: 'ionic-react',
                 color: 'blue-text-gradient',
             },
             {
-                name: 'mongodb',
+                name: 'postgresql',
                 color: 'green-text-gradient',
             },
             {
-                name: 'tailwind',
+                name: 'mqtt',
                 color: 'pink-text-gradient',
             },
         ],
-        image: reactjs,
+        image: nanobar,
         source_code_link: 'https://github.com/',
     },
     {
-        name: 'Job IT',
+        name: 'Travel Itinerary',
         description:
-            'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+            'Web application that enables users to plan travel itineray together in the same session',
         tags: [
             {
-                name: 'react',
+                name: 'bootstrap',
                 color: 'blue-text-gradient',
             },
             {
@@ -256,24 +260,24 @@ const projects = [
                 color: 'green-text-gradient',
             },
             {
-                name: 'scss',
+                name: 'css',
                 color: 'pink-text-gradient',
             },
         ],
-        image: reactjs,
+        image: travel,
         source_code_link: 'https://github.com/',
     },
     {
-        name: 'Trip Guide',
+        name: 'Solar Solutions',
         description:
-            'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+            'A simple solar app for western australia that allows user to calculate their solar usage base on their usage',
         tags: [
             {
-                name: 'nextjs',
+                name: 'noSQL',
                 color: 'blue-text-gradient',
             },
             {
-                name: 'supabase',
+                name: 'ionic-react',
                 color: 'green-text-gradient',
             },
             {
@@ -281,7 +285,7 @@ const projects = [
                 color: 'pink-text-gradient',
             },
         ],
-        image: reactjs,
+        image: solar,
         source_code_link: 'https://github.com/',
     },
 ]

@@ -30,6 +30,10 @@ import education from './company/education.jpeg'
 import milne from './company/milne.jpeg'
 import mypass from './company/mypass.png'
 
+import nanobar from './nanobar.jpg'
+import travel from './travel.jpg'
+import solar from './solar.jpg'
+
 export {
     favicon,
     github,
@@ -60,4 +64,7 @@ export {
     education,
     milne,
     mypass,
+    nanobar,
+    travel,
+    solar,
 }
