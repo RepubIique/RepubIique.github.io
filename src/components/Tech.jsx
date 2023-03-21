@@ -18,7 +18,10 @@ const Tech = () => {
                 </h2>
             </motion.div>
             <PhysicsSimulation />
-            <span>I spent way too long on optimizing</span>
+            <span>
+                Click on canvas to spawn new cubes!!! Spent an embarassing
+                amount of time on this
+            </span>
         </>
     )
 }

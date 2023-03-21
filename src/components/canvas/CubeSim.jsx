@@ -63,7 +63,7 @@ const PhysicsSimulation = () => {
     const handleCanvasClick = (event) => {
         const { offsetX, offsetY } = event.nativeEvent
         const x = (offsetX / event.target.clientWidth) * 2 - 1
-        const y = -(offsetY / event.target.clientHeight) * 2 + 1
+        const y = (offsetY / event.target.clientHeight) * 15 + 1
         const z = 0
         const position = [x, y, z]
         const newCube = (
