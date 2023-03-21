@@ -61,7 +61,7 @@ const PhysicsSimulation = () => {
                     position={[-10, 10, 10]}
                     shadow-mapSize={[250, 250]}
                 />
-                <Physics>
+                <Physics gravity={[0, -20, 0]}>
                     <Plane position={[0, -2.5, 0]} />
                     {[
                         ...technologies,
@@ -82,7 +82,7 @@ const PhysicsSimulation = () => {
                             icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
-                                Math.random() * 700 + 2,
+                                Math.random() * 100 + 2,
                                 Math.random() * 4 - 2,
                             ]}
                         />
