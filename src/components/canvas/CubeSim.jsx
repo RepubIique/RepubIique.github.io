@@ -76,13 +76,22 @@ const PhysicsSimulation = () => {
                         ...technologies,
                         ...technologies,
                         ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
+                        ...technologies,
                     ].map((tech, index) => (
                         <Cube
                             key={index}
                             icon={tech.icon}
                             position={[
                                 Math.random() * 4 - 2,
-                                Math.random() * 100 + 2,
+                                Math.random() * 600 + 2,
                                 Math.random() * 4 - 2,
                             ]}
                         />
