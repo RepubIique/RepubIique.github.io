@@ -26,10 +26,10 @@ const PhysicsSimulation = () => {
             mass: 0.2,
             position,
             rotation: [0.4, 0.2, 0.5],
-            args: [1.5, 1.5, 1.5],
+            args: [1, 1, 1],
         }))
         return (
-            <mesh receiveShadow castShadow scale={1.5} ref={ref}>
+            <mesh receiveShadow castShadow scale={1} ref={ref}>
                 <boxGeometry />
                 <meshStandardMaterial
                     roughness={0.5}
