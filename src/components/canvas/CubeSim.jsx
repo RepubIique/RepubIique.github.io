@@ -14,7 +14,7 @@ const PhysicsSimulation = () => {
         return (
             <mesh ref={ref} receiveShadow>
                 <planeGeometry args={[20, 20, 20]} />
-                <shadowMaterial color="#171717" transparent opacity={0.4} />
+                <shadowMaterial transparent opacity={0} />
             </mesh>
         )
     }
@@ -42,7 +42,7 @@ const PhysicsSimulation = () => {
 
     return (
         <Canvas
-            style={{ height: '500px' }}
+            style={{ height: '500px', width: '100%' }}
             frameloop="demand"
             dpr={[1, 2]}
             gl={{ alpha: false }}
@@ -62,21 +62,8 @@ const PhysicsSimulation = () => {
                     shadow-mapSize={[250, 250]}
                 />
                 <Physics>
-                    <Plane position={[0, -1.3, 0]} />
+                    <Plane position={[0, -2.5, 0]} />
                     {[
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
-                        ...technologies,
                         ...technologies,
                         ...technologies,
                         ...technologies,

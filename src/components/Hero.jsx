@@ -3,6 +3,7 @@ import { styles } from '../styles'
 import { motion } from 'framer-motion'
 import { DuckCanvas } from './canvas'
 import TextTransition, { presets } from 'react-text-transition'
+import { slideIn } from '../utils/motion'
 
 const TEXTS = [
     'Coffee Addict',
