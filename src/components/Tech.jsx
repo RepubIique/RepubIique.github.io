@@ -18,6 +18,7 @@ const Tech = () => {
                 </h2>
             </motion.div>
             <PhysicsSimulation />
+            <span>I spent way too long on optimizing</span>
         </>
     )
 }
