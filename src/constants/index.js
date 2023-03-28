@@ -48,14 +48,6 @@ const services = [
     {
         title: 'Full Stack Developer',
     },
-    // {
-    //     title: 'React Developer',
-    //     icon: ReactCanvas,
-    // },
-    // {
-    //     title: 'React Developer',
-    //     icon: ReactCanvas,
-    // },
 ]
 
 const technologies = [

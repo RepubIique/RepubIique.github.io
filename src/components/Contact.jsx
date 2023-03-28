@@ -59,8 +59,6 @@ const Contact = () => {
                 },
                 (error) => {
                     setLoading(false)
-                    console.error(error)
-
                     alert('Ahh, something went wrong. Please try again.')
                 }
             )
@@ -117,7 +115,7 @@ const Contact = () => {
                             name="message"
                             value={form.message}
                             onChange={handleChange}
-                            placeholder="eg: I would like to give you a billion dollaroos or a job building softwares for space shuttles"
+                            placeholder="eg: I would like to give you a billion dollaroos"
                             className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
                         />
                     </label>
