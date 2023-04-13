@@ -19,7 +19,6 @@ const ScrambleText = ({ className }) => {
     const [intervalId, setIntervalId] = useState(null)
 
     const handleMouseOver = () => {
-        console.log('mouse detected')
         let iteration = 0
 
         clearInterval(intervalId)
@@ -47,6 +46,12 @@ const ScrambleText = ({ className }) => {
         setIntervalId(newInterval)
     }
 
+    // Call the function on page load
+    useEffect(() => {
+        handleMouseOver()
+    }, [])
+
+    // Clean up the interval when the component unmounts
     useEffect(() => {
         return () => {
             clearInterval(intervalId)
@@ -94,7 +99,7 @@ const Hero = () => {
                     <div className="w-5 h-5 rounded-full bg-[#829edd]"></div>
                     <div className="w-1 sm:h-80 h-40 teal-gradient"></div>
                 </div>
-                <div className="z-20">
+                <div className={`z-10`}>
                     <ScrambleText
                         className={`${styles.heroHeadText} text-white`}
                     />
