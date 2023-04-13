@@ -32,9 +32,9 @@ const Navbar = () => {
                         <span className="sm:block hidden"> | Portfolio</span>
                     </p>
                 </Link>
-                <button class="bg-transparent hover:bg-gray-400 hover:text-white font-bold py-2 px-4 rounded inline-flex border border-blue-300 hover:border-transparent items-center">
+                <button className="bg-transparent hover:bg-gray-400 hover:text-white font-bold py-2 px-4 rounded inline-flex border border-blue-300 hover:border-transparent items-center">
                     <svg
-                        class="fill-current w-4 h-4 mr-2"
+                        className="fill-current w-4 h-4 mr-2"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                     >
