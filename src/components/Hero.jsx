@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styles } from '../styles'
 import { motion } from 'framer-motion'
 import { DuckCanvas } from './canvas'
 import TextTransition, { presets } from 'react-text-transition'
-import { slideIn } from '../utils/motion'
 
 const TEXTS = [
     'Coffee Addict',
@@ -12,6 +11,58 @@ const TEXTS = [
     'Swing Trader',
     '"Comedian"',
 ]
+
+const ScrambleText = ({ className }) => {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const originalText = "Hi, I'm Kendrick"
+    const [text, setText] = useState(originalText)
+    const [intervalId, setIntervalId] = useState(null)
+
+    const handleMouseOver = () => {
+        console.log('mouse detected')
+        let iteration = 0
+
+        clearInterval(intervalId)
+
+        const newInterval = setInterval(() => {
+            setText((currentText) =>
+                currentText
+                    .split('')
+                    .map((letter, index) => {
+                        if (index < iteration) {
+                            return originalText[index]
+                        }
+                        return letters[Math.floor(Math.random() * 26)]
+                    })
+                    .join('')
+            )
+
+            if (iteration >= originalText.length) {
+                clearInterval(newInterval)
+            }
+
+            iteration += 1 / 3
+        }, 30)
+
+        setIntervalId(newInterval)
+    }
+
+    useEffect(() => {
+        return () => {
+            clearInterval(intervalId)
+        }
+    }, [intervalId])
+
+    return (
+        <h1
+            onMouseEnter={handleMouseOver}
+            className={className}
+            style={{ userSelect: 'auto' }}
+        >
+            {text}
+        </h1>
+    )
+}
 
 const Hero = () => {
     const [index, setIndex] = useState(0)
@@ -43,10 +94,10 @@ const Hero = () => {
                     <div className="w-5 h-5 rounded-full bg-[#829edd]"></div>
                     <div className="w-1 sm:h-80 h-40 teal-gradient"></div>
                 </div>
-                <div>
-                    <h1 className={`${styles.heroHeadText} text-white`}>
-                        Hi, I'm Kendrick
-                    </h1>
+                <div className="z-20">
+                    <ScrambleText
+                        className={`${styles.heroHeadText} text-white`}
+                    />
                     <h1
                         className={`font-black text-[#829edd] lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2`}
                     >
