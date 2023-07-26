@@ -2,7 +2,7 @@
     "name": "three-portfolio",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://repubiique.github.io/three-portfolio/",
+    "homepage": "https://repubiique.github.io",
     "type": "module",
     "scripts": {
         "predeploy": "npm run build",
